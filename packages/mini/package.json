@@ -1,5 +1,5 @@
 {
-  "name": "taro-mini-project",
+  "name": "@td-mono/mini",
   "version": "1.0.0",
   "description": "使用Taro创建的小程序项目",
   "main": "index.js",
@@ -7,8 +7,8 @@
   "private": true,
   "dependencies": {
     "cross-env": "^7.0.3",
-    "mono-business": "^1.0.0",
-    "mono-api": "^1.0.0",
-    "mono-utils": "^1.0.0"
+    "@td-mono/business": "^1.0.0",
+    "@td-mono/api": "^1.0.0",
+    "@td-mono/utils": "^1.0.0"
   }
 }

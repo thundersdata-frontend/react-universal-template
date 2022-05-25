@@ -1,5 +1,5 @@
 {
-  "name": "rn-project",
+  "name": "@td-mono/rn",
   "version": "1.0.0",
   "description": "react-native项目",
   "author": "chenjie@thundersdata.com",
@@ -10,9 +10,9 @@
     "start": "react-native start"
   },
   "dependencies": {
-    "mono-business": "^1.0.0",
-    "mono-api": "^1.0.0",
-    "mono-utils": "^1.0.0",
+    "@td-mono/api": "^1.0.0",
+    "@td-mono/business": "^1.0.0",
+    "@td-mono/utils": "^1.0.0",
     "react": "17.0.2",
     "react-native": "0.67.4"
   },

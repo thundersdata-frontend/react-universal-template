@@ -6,11 +6,11 @@ export function loadPlatform(platform: string) {
   switch (platform) {
     case 'RN':
       return rnPlatform;
-    case 'h5':
+    case 'H5':
       return h5Platform;
-    case 'mini':
+    case 'MINI':
       return miniPlatform;
     default:
-      throw new Error(`unknown platform: ${platform}`);
+      throw new Error(`不支持的平台: ${platform}`);
   }
 }

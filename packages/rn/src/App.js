@@ -1,6 +1,8 @@
 import React from 'react';
 import { SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, useColorScheme, View } from 'react-native';
 
+import * as business from '@td-mono/business';
+
 import {
   Colors,
   DebugInstructions,
@@ -39,6 +41,7 @@ const Section = ({ children, title }) => {
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
+  console.log(process.env);
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
@@ -54,10 +57,7 @@ const App = () => {
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}
         >
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this screen and then come back to see your
-            edits.
-          </Section>
+          <Section title="Log from bussiness">{business.log()}</Section>
           <Section title="See Your Changes">
             <ReloadInstructions />
           </Section>

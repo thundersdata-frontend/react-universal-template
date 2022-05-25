@@ -11,7 +11,8 @@
     "postinstall": "npx husky install",
     "commit": "git-cz",
     "tsc": "tsc -p tsconfig.json",
-    "reinstall": "find . -type dir -name node_modules | xargs rm -rf && yarn"
+    "reinstall": "find . -type dir -name node_modules | xargs rm -rf && yarn",
+    "rn:android": "yarn workspace @td-mono/rn run android"
   },
   "config": {
     "commitizen": {
@@ -26,12 +27,7 @@
   },
   "workspaces": {
     "packages": [
-      "packages/api",
-      "packages/business",
-      "packages/utils",
-      "packages/rn",
-      "packages/mini",
-      "packages/h5"
+      "packages/*"
     ],
     "nohoist": [
       "**/react",

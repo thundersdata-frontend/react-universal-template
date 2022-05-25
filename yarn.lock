@@ -5943,6 +5943,11 @@ mkdirp@^0.5.1:
   dependencies:
     minimist "^1.2.6"
 
+mono-utils@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmmirror.com/mono-utils/-/mono-utils-1.0.0.tgz#e90d8253690516fa0d29ba4e3ed52c77dab4288c"
+  integrity sha512-Z2YlVIYYoloqJ6MuSF09V+BIU3zViYS4Sp2QN9kzGAHHMdttRTgt36syFgY1tcF9ScspD9NvDAd8Ndeb6bbxOw==
+
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
