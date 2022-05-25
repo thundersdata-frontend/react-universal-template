@@ -1,0 +1,62 @@
+{
+  "name": "frontend-monorepo-template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/thundersdata-frontend/frontend-monorepo-template.git",
+  "author": "chenjie@thundersdata.com",
+  "private": true,
+  "scripts": {
+    "eslint": "eslint --fix --ext .ts,.tsx",
+    "prettier": "prettier --check packages/**/*.tsx --write",
+    "postinstall": "npx husky install",
+    "commit": "git-cz",
+    "tsc": "tsc -p tsconfig.json"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts,tsx}": [
+      "npm run eslint",
+      "npm run prettier"
+    ]
+  },
+  "workspaces": {
+    "packages": [
+      "packages/api",
+      "packages/business",
+      "packages/utils"
+    ],
+    "nohoist": [
+      "packages/rn",
+      "packages/mini",
+      "packages/h5",
+      "rn/react-native",
+      "rn/react-native/**"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.0",
+    "@commitlint/config-conventional": "^17.0.0",
+    "@td-design/pont-engine": "^1.0.3",
+    "@types/lodash-es": "^4.17.6",
+    "@typescript-eslint/eslint-plugin": "^5.26.0",
+    "@typescript-eslint/parser": "^5.26.0",
+    "commitizen": "^4.2.4",
+    "cz-customizable": "^6.3.0",
+    "eslint": "^8.16.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "eslint-plugin-react-native": "^4.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^12.4.2",
+    "prettier": "^2.6.2",
+    "typescript": "^4.7.2"
+  }
+}
