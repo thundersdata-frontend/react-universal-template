@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "jsx": "react-native",
+    "jsx": "react-jsx",
     "lib": ["esnext"],
     "moduleResolution": "node",
     "target": "esnext",
@@ -22,7 +22,8 @@
     "downlevelIteration": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "incremental": false
+    "incremental": false,
+    "rootDir": "./"
   },
   "exclude": ["node_modules"]
 }

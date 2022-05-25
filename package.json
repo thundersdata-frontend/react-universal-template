@@ -10,9 +10,7 @@
     "prettier": "prettier --check packages/**/*.tsx --write",
     "postinstall": "npx husky install",
     "commit": "git-cz",
-    "tsc": "tsc -p tsconfig.json",
-    "reinstall": "find . -type dir -name node_modules | xargs rm -rf && yarn",
-    "rn:android": "yarn workspace @td-mono/rn run android"
+    "reinstall": "find . -type dir -name node_modules | xargs rm -rf && yarn"
   },
   "config": {
     "commitizen": {

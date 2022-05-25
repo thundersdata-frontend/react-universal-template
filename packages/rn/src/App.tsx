@@ -1,4 +1,3 @@
-import React from 'react';
 import { SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, useColorScheme, View } from 'react-native';
 
 import * as business from '@td-mono/business';
@@ -11,7 +10,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const Section = ({ children, title }) => {
+const Section: React.FC<{ title: string; children: React.ReactNode }> = ({ children, title }) => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>

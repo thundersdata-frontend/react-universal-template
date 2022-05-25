@@ -7,20 +7,37 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "start": "react-native start"
+    "start": "react-native start",
+    "tsc": "tsc -p ./tsconfig.json"
   },
   "dependencies": {
     "@td-mono/api": "^1.0.0",
     "@td-mono/business": "^1.0.0",
     "@td-mono/utils": "^1.0.0",
+    "@byron-react-native/refresh-control": "^1.1.2",
+    "@react-native-clipboard/clipboard": "^1.10.0",
+    "@react-native-community/masked-view": "^0.1.11",
+    "@react-native-community/netinfo": "^8.3.0",
+    "@react-native-picker/picker": "^2.4.1",
+    "@react-navigation/bottom-tabs": "^6.3.1",
+    "@react-navigation/native": "^6.0.10",
+    "@react-navigation/stack": "^6.2.1",
+    "@shopify/restyle": "2.0.0",
     "react": "17.0.2",
-    "react-native": "0.67.4"
+    "react-native": "0.67.4",
+    "react-native-gesture-handler": "^2.4.2",
+    "react-native-reanimated": "^2.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.0",
     "@babel/runtime": "^7.18.0",
     "@react-native-community/eslint-config": "^3.0.2",
+    "@types/react": "17.0.39",
+    "@types/react-native": "0.67.7",
     "babel-jest": "^27.5.1",
+    "babel-plugin-import": "^1.13.5",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "eslint": "^8.16.0",
     "jest": "^27.5.1",
     "metro-react-native-babel-preset": "^0.71.0",
