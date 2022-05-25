@@ -2,7 +2,6 @@
   "name": "mono-business",
   "version": "1.0.0",
   "description": "多端通用的业务模块",
-  "main": "index.js",
   "author": "chenjie@thundersdata.com",
   "private": true
 }
