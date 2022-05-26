@@ -1,5 +1,5 @@
 {
-  "outDir": "./packages/api",
+  "outDir": ".",
   "templatePath": "./pontTemplate",
   "usingMultipleOrigins": true,
   "mocks": {

@@ -1,4 +1,4 @@
-import pontConfig from '../../pont-config.json';
+import pontConfig from './pont-config.json';
 
 export default function () {
   const result: Record<string, string> = {};

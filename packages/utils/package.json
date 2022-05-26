@@ -3,5 +3,6 @@
   "version": "1.0.0",
   "description": "多端通用的辅助方法",
   "author": "chenjie@thundersdata.com",
-  "private": true
+  "private": true,
+  "main": "index.ts"
 }

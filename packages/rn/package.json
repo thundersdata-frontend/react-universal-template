@@ -8,13 +8,14 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
+    "clean": "react-native-clean-project",
     "tsc": "tsc -p ./tsconfig.json"
   },
   "dependencies": {
+    "@byron-react-native/refresh-control": "^1.1.2",
     "@mono-app/api": "*",
     "@mono-app/business": "*",
     "@mono-app/utils": "*",
-    "@byron-react-native/refresh-control": "^1.1.2",
     "@react-native-clipboard/clipboard": "^1.10.0",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-native-community/netinfo": "^8.3.0",
@@ -41,6 +42,8 @@
     "eslint": "^8.16.0",
     "jest": "^27.5.1",
     "metro-react-native-babel-preset": "^0.71.0",
+    "react-native-clean-project": "^4.0.1",
+    "react-native-monorepo-tools": "^1.1.4",
     "react-test-renderer": "^17.0.2"
   }
 }
