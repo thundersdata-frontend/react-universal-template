@@ -1,6 +1,6 @@
 import { SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, useColorScheme, View } from 'react-native';
 
-import * as business from '@td-mono/business';
+import biz from '@td-mono/business';
 
 import {
   Colors,
@@ -9,6 +9,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import { useEffect } from 'react';
 
 const Section: React.FC<{ title: string; children: React.ReactNode }> = ({ children, title }) => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -40,11 +41,16 @@ const Section: React.FC<{ title: string; children: React.ReactNode }> = ({ child
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
-  console.log(process.env);
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+
+  const { fetchOrder, order } = biz.useOrderService();
+
+  useEffect(() => {
+    fetchOrder();
+  }, []);
 
   return (
     <SafeAreaView style={backgroundStyle}>
@@ -56,7 +62,7 @@ const App = () => {
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}
         >
-          <Section title="Log from bussiness">{business.log()}</Section>
+          <Section title="Order">{JSON.stringify(order)}</Section>
           <Section title="See Your Changes">
             <ReloadInstructions />
           </Section>

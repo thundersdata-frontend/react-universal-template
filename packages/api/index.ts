@@ -1,8 +1,8 @@
 import { defs as authorizationDefs, authorization } from './authorization';
 
-(global as any).defs = {
+export const defs = {
   authorization: authorizationDefs,
 };
-(global as any).API = {
+export const API = {
   authorization,
 };

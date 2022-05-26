@@ -5,8 +5,6 @@ export class FileStructures extends Pont.FileStructures {
   getDataSourcesTs() {
     const dsNames = this.getMultipleOriginsDataSourceName();
 
-    const generatedCode = '(global as any)';
-
     return `
       ${dsNames
         .map(name => {
@@ -15,10 +13,10 @@ export class FileStructures extends Pont.FileStructures {
         })
         .join('\n')}
 
-      ${generatedCode}.defs = {
+      export const defs = {
         ${dsNames.map(name => `${name}: ${name}Defs,`).join('\n')}
       };
-      ${generatedCode}.API = {
+      export const API = {
         ${dsNames.join(',\n')}
       };
     `;

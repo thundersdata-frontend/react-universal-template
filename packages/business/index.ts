@@ -1,3 +1,5 @@
-export function log() {
-  return 'I am log from business';
-}
+import useOrderService from './useOrderService';
+
+export default {
+  useOrderService,
+};
