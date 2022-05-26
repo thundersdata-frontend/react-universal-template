@@ -2,7 +2,7 @@ import { extend, fetch, ResponseError } from 'umi-request';
 import { isEmpty } from 'lodash-es';
 import dayjs from 'dayjs';
 
-import * as utils from '@td-mono/utils';
+import * as utils from '@mono-app/utils';
 import { refreshTokenUrl } from './server.config';
 
 const codeMessage: Record<number, string> = {

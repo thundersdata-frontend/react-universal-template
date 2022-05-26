@@ -1,5 +1,5 @@
 {
-  "name": "@td-mono/api",
+  "name": "@mono-app/api",
   "version": "1.0.0",
   "description": "多端通用的后端接口定义",
   "author": "chenjie@thundersdata.com",

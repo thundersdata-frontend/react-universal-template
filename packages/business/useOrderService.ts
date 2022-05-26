@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { API } from '@td-mono/api';
+import { API } from '@mono-app/api';
 
 type Order = { id: number; name: string; email: string };
 

@@ -1,10 +1,14 @@
 {
-  "name": "@td-mono/business",
+  "name": "@mono-app/business",
   "version": "1.0.0",
   "description": "多端通用的业务模块",
   "author": "chenjie@thundersdata.com",
   "private": true,
   "dependencies": {
-    "@td-mono/api": "^1.0.0"
+    "@mono-app/api": "*"
+  },
+  "devDependencies": {
+    "@types/react": "17.0.39",
+    "@types/react-native": "0.67.7"
   }
 }

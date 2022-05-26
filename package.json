@@ -29,8 +29,12 @@
     ],
     "nohoist": [
       "**/react",
+      "**/react-dom",
       "**/react-native",
-      "**/react-native/**"
+      "**/react-native/**",
+      "**/react-native-**",
+      "**/@react-native-**",
+      "**/@react-navigation/**"
     ]
   },
   "devDependencies": {

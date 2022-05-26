@@ -1,5 +1,5 @@
 {
-  "name": "@td-mono/rn",
+  "name": "@mono-app/rn",
   "version": "1.0.0",
   "description": "react-native项目",
   "author": "chenjie@thundersdata.com",
@@ -11,9 +11,9 @@
     "tsc": "tsc -p ./tsconfig.json"
   },
   "dependencies": {
-    "@td-mono/api": "^1.0.0",
-    "@td-mono/business": "^1.0.0",
-    "@td-mono/utils": "^1.0.0",
+    "@mono-app/api": "*",
+    "@mono-app/business": "*",
+    "@mono-app/utils": "*",
     "@byron-react-native/refresh-control": "^1.1.2",
     "@react-native-clipboard/clipboard": "^1.10.0",
     "@react-native-community/masked-view": "^0.1.11",
