@@ -1,9 +1,6 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "jsx": "react-native",
-    "paths": {
-      "@mono-app/business": ["../business"]
-    }
+    "jsx": "react-native"
   }
 }

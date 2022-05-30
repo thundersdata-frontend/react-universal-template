@@ -4,16 +4,16 @@ import miniPlatform from './platform/mini';
 
 export function loadPlatform(platform: string) {
   switch (platform) {
-    case 'RN':
+    case 'rn':
       return rnPlatform;
-    case 'WEB':
+    case 'h5':
       return h5Platform;
-    case 'WEAPP':
-    case 'SWAN':
-    case 'ALIPAY':
-    case 'TT':
-    case 'QQ':
-    case 'JD':
+    case 'weapp':
+    case 'swan':
+    case 'alipay':
+    case 'tt':
+    case 'qq':
+    case 'jd':
       return miniPlatform;
     default:
       throw new Error(`不支持的平台: ${platform}`);

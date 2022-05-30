@@ -9,7 +9,8 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "clean": "react-native-clean-project",
-    "tsc": "tsc -p ./tsconfig.json"
+    "tsc": "tsc -p ./tsconfig.json",
+    "pod": "cd ios && pod install && cd .."
   },
   "dependencies": {
     "@byron-react-native/refresh-control": "^1.1.2",
@@ -26,6 +27,7 @@
     "@shopify/restyle": "2.0.0",
     "react": "17.0.2",
     "react-native": "0.67.4",
+    "react-native-config": "^1.4.5",
     "react-native-gesture-handler": "^2.4.2",
     "react-native-reanimated": "^2.8.0"
   },

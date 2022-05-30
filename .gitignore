@@ -146,7 +146,7 @@ buck-out/
 *.jsbundle
 
 # CocoaPods
-/ios/Pods/
+Pods/
 Podfile.lock
 
 # react-native-config codegen

@@ -13,10 +13,11 @@ const Section: React.FC<{ title: string; children: React.ReactNode }> = ({ child
 };
 
 const App = () => {
-  const { fetchOrder, order } = biz.useOrderService();
+  const { fetchOrder, getOrder, order } = biz.useOrderService();
 
   useEffect(() => {
     fetchOrder();
+    getOrder();
   }, []);
 
   return (
