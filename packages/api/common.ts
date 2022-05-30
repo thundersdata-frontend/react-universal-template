@@ -1,80 +1,24 @@
-import { extend, fetch, ResponseError } from 'umi-request';
-import { isEmpty } from 'lodash-es';
-import dayjs from 'dayjs';
+import Taro from '@tarojs/taro';
 
-import * as utils from '@mono-app/utils';
-import { refreshTokenUrl } from './server.config';
+/**
+ * 初始化请求， 需要根据当前环境设置不同的请求方式。
+ * -RN / h5: 用umi-request
+ * -Taro: 用Taro.request
+ * @returns
+ */
+export const initRequest = () => {
+  const env = Taro.getEnv();
 
-const codeMessage: Record<number, string> = {
-  400: '请求参数错误，请检查',
-  401: '您没有权限',
-  403: '您访问的资源被禁止',
-  404: '请求地址不存在',
-  500: '服务器发生错误',
-  502: '网关错误',
-  503: '服务不可用，服务器暂时过载或维护',
-  504: '网关超时',
-};
+  // 使用 xhr 适配器的平台
+  const platformsUsingXhrAdapter: Array<TaroGeneral.ENV_TYPE> = [Taro.ENV_TYPE.WEB, Taro.ENV_TYPE.RN];
 
-export function errorHandler(error: ResponseError) {
-  const { response } = error;
-  if (response && response.status) {
-    const errorText = codeMessage[response.status] || response.statusText;
-    const { status, url } = response;
-
-    throw new Error(
-      JSON.stringify({
-        message: errorText,
-        description: `请求错误 ${status}: ${url}`,
-      }),
-    );
+  // 非使用 xhr 适配器的平台一律使用 Taro 适配器
+  if (platformsUsingXhrAdapter.includes(env)) {
+    /** 使用中间件在请求前进行token的校验 */
+    const request = require('./utils/request/umi-request').default(env);
+    return request;
+  } else {
+    const request = require('./utils/request/taro-request').default(env);
+    return request;
   }
-  throw error;
-}
-
-export const initRequest = async () => {
-  const request = extend({
-    timeout: 30000,
-    errorHandler,
-  });
-
-  const platform = utils.loadPlatform(process.env.platform ?? 'RN');
-
-  /** 使用中间件在请求前进行token的校验 */
-  request.use(async (ctx, next) => {
-    const token = platform.getToken();
-    if (isEmpty(token)) {
-      await next();
-      return;
-    }
-    const { accessToken, refreshToken, tokenExpireTime } = token;
-
-    // 判断当前日期是否晚于tokenExpireTime，如果是表示token已经过期，需要用refreshToken去换一个新的token
-    if (dayjs().isAfter(dayjs(tokenExpireTime))) {
-      const result = await fetch(`${refreshTokenUrl}?refreshToken=${refreshToken}`).then(response => response.json());
-      const { data } = result;
-      platform.updateStorage('Token', data);
-
-      // 对request的header增加accessToken配置
-      ctx.req.options = {
-        ...ctx.req.options,
-        headers: {
-          ...ctx.req.options.headers,
-          accessToken: data.accessToken!,
-        },
-      };
-      await next();
-    } else {
-      // 对request的header增加accessToken配置
-      ctx.req.options = {
-        ...ctx.req.options,
-        headers: {
-          ...ctx.req.options.headers,
-          accessToken: accessToken!,
-        },
-      };
-      await next();
-    }
-  });
-  return request;
 };

@@ -198,7 +198,7 @@ export default class MyGenerator extends CodeGenerator {
       export const url = "${inter.path}";
 
       export async function fetch(${requestParams}) {
-        const request = await initRequest();
+        const request = initRequest();
         const result = await request.${requestObj.method}(backEndUrl + '${inter.path}', {
           headers: {
             'Content-Type': '${requestObj.contentType}',

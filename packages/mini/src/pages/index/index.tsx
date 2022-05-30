@@ -1,24 +1,25 @@
-import { Component } from 'react'
-import { View, Text } from '@tarojs/components'
-import './index.less'
+import { useEffect } from 'react';
+import { View, Text } from '@tarojs/components';
 
-export default class Index extends Component {
+import biz from '@mono-app/business';
 
-  componentWillMount () { }
+export default function Index() {
+  const { fetchOrder, getOrder, order } = biz.useOrderService();
 
-  componentDidMount () { }
+  useEffect(() => {
+    fetchOrder();
+    getOrder();
+  }, []);
 
-  componentWillUnmount () { }
-
-  componentDidShow () { }
-
-  componentDidHide () { }
-
-  render () {
-    return (
-      <View className='index'>
-        <Text>Hello world!</Text>
+  return (
+    <View className="index">
+      <Text>Hello world!</Text>
+      <View>
+        <View>
+          <Text>Order:</Text>
+          <Text>{JSON.stringify(order)}</Text>
+        </View>
       </View>
-    )
-  }
+    </View>
+  );
 }

@@ -6,9 +6,14 @@ export function loadPlatform(platform: string) {
   switch (platform) {
     case 'RN':
       return rnPlatform;
-    case 'H5':
+    case 'WEB':
       return h5Platform;
-    case 'MINI':
+    case 'WEAPP':
+    case 'SWAN':
+    case 'ALIPAY':
+    case 'TT':
+    case 'QQ':
+    case 'JD':
       return miniPlatform;
     default:
       throw new Error(`不支持的平台: ${platform}`);

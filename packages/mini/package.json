@@ -11,7 +11,6 @@
     "build:alipay": "taro build --type alipay",
     "build:tt": "taro build --type tt",
     "build:h5": "taro build --type h5",
-    "build:rn": "taro build --type rn",
     "build:qq": "taro build --type qq",
     "build:jd": "taro build --type jd",
     "build:quickapp": "taro build --type quickapp",
@@ -20,7 +19,6 @@
     "dev:alipay": "npm run build:alipay -- --watch",
     "dev:tt": "npm run build:tt -- --watch",
     "dev:h5": "npm run build:h5 -- --watch",
-    "dev:rn": "npm run build:rn -- --watch",
     "dev:qq": "npm run build:qq -- --watch",
     "dev:jd": "npm run build:jd -- --watch",
     "dev:quickapp": "npm run build:quickapp -- --watch"
@@ -31,24 +29,27 @@
     "ios >= 8"
   ],
   "dependencies": {
-    "@mono-app/business": "*",
     "@mono-app/api": "*",
+    "@mono-app/business": "*",
     "@mono-app/utils": "*",
-    "@babel/runtime": "^7.7.7",
     "@tarojs/components": "3.4.10",
-    "@tarojs/runtime": "3.4.10",
-    "@tarojs/taro": "3.4.10",
     "@tarojs/plugin-framework-react": "3.4.10",
     "@tarojs/react": "3.4.10",
-    "react-dom": "^17.0.0",
-    "react": "^17.0.0"
+    "@tarojs/runtime": "3.4.10",
+    "@tarojs/taro": "3.4.10",
+    "@tarojs/taro-weapp": "^2.2.10",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
   },
   "devDependencies": {
-    "@types/webpack-env": "^1.13.6",
-    "@types/react": "^17.0.2",
-    "@tarojs/mini-runner": "3.4.10",
     "@babel/core": "^7.8.0",
+    "@babel/runtime": "^7.7.7",
+    "@tarojs/cli": "^3.4.10",
+    "@tarojs/mini-runner": "3.4.10",
+    "@tarojs/plugin-babel": "^2.2.10",
     "@tarojs/webpack-runner": "3.4.10",
+    "@types/react": "^17.0.2",
+    "@types/webpack-env": "^1.13.6",
     "babel-preset-taro": "3.4.10",
     "stylelint": "^14.4.0"
   }

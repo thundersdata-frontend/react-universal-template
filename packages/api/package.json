@@ -6,12 +6,13 @@
   "private": true,
   "main": "index.ts",
   "dependencies": {
-    "mono-utils": "^1.0.0",
-    "umi-request": "^1.4.0",
+    "@mono-app/utils": "*",
+    "dayjs": "^1.11.2",
     "lodash-es": "^4.17.21",
-    "dayjs": "^1.11.2"
+    "umi-request": "^1.4.0"
   },
   "devDependencies": {
-    "@td-design/pont-engine": "^1.0.3"
+    "@td-design/pont-engine": "^1.0.3",
+    "@tarojs/taro": "3.4.10"
   }
 }
