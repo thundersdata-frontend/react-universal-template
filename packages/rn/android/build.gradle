@@ -3,17 +3,21 @@
 buildscript {
     ext {
         buildToolsVersion = "30.0.2"
-        minSdkVersion = 21
-        compileSdkVersion = 30
-        targetSdkVersion = 30
+        minSdkVersion = 23
+        compileSdkVersion = 31
+        targetSdkVersion = 31
         ndkVersion = "21.4.7075529"
+        androidXCore = "1.7.0"
+        kotlinVersion = "1.5.20"
+        excludeAppGlideModule = true
     }
     repositories {
-        google()
         mavenCentral()
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:4.2.2")
+        classpath('com.android.tools.build:gradle:7.1.0-rc01')
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -36,7 +40,8 @@ allprojects {
                 excludeGroup "com.facebook.react"
             }
         }
-        google()
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
         maven { url 'https://www.jitpack.io' }
     }
 }

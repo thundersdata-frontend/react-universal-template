@@ -150,4 +150,4 @@ Pods/
 Podfile.lock
 
 # react-native-config codegen
-ios/tmp.xcconfig
+tmp.xcconfig

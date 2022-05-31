@@ -2,8 +2,24 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="android:editTextBackground">@drawable/rn_edit_text_material</item>
+        
+        <!-- Make the bottom navigation bar transparent -->
+        <item name="android:navigationBarColor">
+            @android:color/transparent
+        </item>
+
+        <!-- Make the top status bar transparent -->
+        <item name="android:statusBarColor">
+            @android:color/transparent
+        </item>
     </style>
+
+     <!-- BootTheme should inherit from Theme.SplashScreen -->
+     <style name="BootTheme" parent="Theme.SplashScreen">
+       <item name="windowSplashScreenBackground">@color/bootsplash_background</item>
+       <item name="windowSplashScreenAnimatedIcon">@mipmap/bootsplash_logo</item>
+       <item name="postSplashScreenTheme">@style/AppTheme</item>
+     </style>
 
 </resources>
