@@ -1,6 +1,6 @@
 import { Text, View } from 'react-native';
 
-export default () => {
+export const ModifyPassword = () => {
   return (
     <View>
       <Text>Modify Password</Text>

@@ -30,6 +30,7 @@
     "nohoist": [
       "**/react",
       "**/react-dom",
+      "**/td-design/**",
       "**/react-native",
       "**/react-native/**",
       "**/react-native-**",

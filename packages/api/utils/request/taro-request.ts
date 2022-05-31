@@ -4,7 +4,7 @@ import * as utils from '@mono-app/utils';
 type RequestOption = { params?: Record<string, any>; headers: Record<string, any>; data?: any };
 
 export default function taroRequest(env: string) {
-  const platform = utils.loadPlatform(env);
+  const platform = utils.platform.loadPlatform(env);
   const token = platform.getToken();
   const { accessToken } = token;
 

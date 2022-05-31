@@ -1,21 +1,6 @@
-import rnPlatform from './platform/rn';
-import h5Platform from './platform/h5';
-import miniPlatform from './platform/mini';
+import * as platform from './platform';
+import * as object from './object';
+import * as string from './string';
+import * as validator from './validator';
 
-export function loadPlatform(platform: string) {
-  switch (platform) {
-    case 'rn':
-      return rnPlatform;
-    case 'h5':
-      return h5Platform;
-    case 'weapp':
-    case 'swan':
-    case 'alipay':
-    case 'tt':
-    case 'qq':
-    case 'jd':
-      return miniPlatform;
-    default:
-      throw new Error(`不支持的平台: ${platform}`);
-  }
-}
+export { platform, object, string, validator };

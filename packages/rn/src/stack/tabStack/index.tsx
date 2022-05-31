@@ -1,24 +1,32 @@
-import { Text } from 'react-native';
+import { useTheme } from '@shopify/restyle';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { helpers, Text } from '@td-design/react-native';
 
-import Homepage from '../../screens/Homepage';
-import Mine from '../../screens/Mine';
+import { AppTheme } from '../../theme';
+import Icon, { IconNames } from '../../components/Icon';
 
+import { Homepage } from '../../modules/homepage/screens';
+import { Mine } from '../../modules/user/screens';
+
+const { px } = helpers;
 const Tab = createBottomTabNavigator();
-const tabItems: { name: string; label: string; component: () => JSX.Element }[] = [
+const tabItems: { name: string; label: string; icon: IconNames; component: () => JSX.Element }[] = [
   {
     name: 'Homepage',
     component: Homepage,
     label: '首页',
+    icon: 'sms',
   },
   {
     name: 'Mine',
     component: Mine,
     label: '我的',
+    icon: 'user',
   },
 ];
 
 export const TabStack = () => {
+  const theme = useTheme<AppTheme>();
   return (
     <Tab.Navigator
       initialRouteName="Homepage"
@@ -27,6 +35,9 @@ export const TabStack = () => {
         lazy: true,
         // 不显示TabScreen的header
         headerShown: false,
+        tabBarStyle: {
+          paddingTop: px(4),
+        },
       }}
     >
       {tabItems.map(item => (
@@ -36,7 +47,19 @@ export const TabStack = () => {
           component={item.component}
           options={{
             title: item.label,
-            tabBarLabel: () => <Text>{item?.label}</Text>,
+            tabBarLabel: ({ focused }) => (
+              <Text
+                style={{
+                  color: focused ? theme.colors.gray500 : theme.colors.gray300,
+                  fontSize: px(12),
+                }}
+              >
+                {item?.label}
+              </Text>
+            ),
+            tabBarIcon: ({ focused }) => (
+              <Icon name={item.icon} size={px(20)} color={focused ? theme.colors.gray500 : theme.colors.gray300} />
+            ),
           }}
         />
       ))}

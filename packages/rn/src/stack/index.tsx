@@ -1,6 +1,7 @@
 import { StackNavigationOptions, CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack';
-import ModifyPassword from '../screens/ModifyPassword';
 import { TabStack } from './tabStack';
+
+import { ModifyPassword } from '../modules/user/screens/modifyPass';
 
 const MAIN_SCREENS = [
   {
