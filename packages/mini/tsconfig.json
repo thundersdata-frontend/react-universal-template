@@ -4,11 +4,8 @@
     "module": "commonjs",
     "removeComments": false,
     "preserveConstEnums": true,
-    "outDir": "lib",
     "sourceMap": true,
-    "baseUrl": ".",
-    "rootDir": ".",
-    "typeRoots": ["node_modules/@types"]
+    "typeRoots": ["node_modules/@types", "../../global.d.ts"]
   },
-  "include": ["./src", "global.d.ts"]
+  "include": ["./src", "../../global.d.ts"]
 }

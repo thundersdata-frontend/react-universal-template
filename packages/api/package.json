@@ -5,6 +5,7 @@
   "author": "chenjie@thundersdata.com",
   "private": true,
   "main": "index.ts",
+  "install-peers": "install-peers",
   "dependencies": {
     "@mono-app/utils": "*",
     "dayjs": "^1.11.2",
@@ -12,6 +13,7 @@
     "umi-request": "^1.4.0"
   },
   "devDependencies": {
+    "install-peers-cli": "^2.2.0",
     "@tarojs/taro": "3.4.10",
     "@td-design/pont-engine": "^1.0.3"
   }

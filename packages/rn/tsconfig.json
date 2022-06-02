@@ -1,6 +1,8 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "jsx": "react-native"
-  }
+    "jsx": "react-native",
+    "typeRoots": ["node_modules/@types", "../../global.d.ts", "./types"]
+  },
+  "include": ["./src", "../../global.d.ts", "./types"]
 }

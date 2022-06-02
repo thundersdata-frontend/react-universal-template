@@ -1,3 +1,15 @@
+declare module 'react-native-mmkv' {
+  export class MMKV {
+    getAllKeys: () => string[];
+    getBoolean: (key: string) => boolean;
+    getString: (key: string) => string;
+    delete: (key: string) => void;
+    set: (key: string, value: string | number | boolean) => void;
+  }
+}
+
+type PlatformType = 'h5' | 'rn' | 'weapp' | 'alipay' | 'tt' | 'swan' | 'qq' | 'jd' | 'quickapp';
+
 interface Token {
   accessToken?: string;
   refreshToken?: string;
@@ -29,3 +41,11 @@ type UserInfo = {
   userName?: string;
   profilePicture?: string;
 };
+interface Platform {
+  name: 'rn' | 'h5' | 'mini';
+  ref?: any;
+  getToken(): Token;
+  updateStorage<T>(key: string, value: T): void;
+  getStorage(key: string): string | undefined;
+  navigate(path: string, params?: Record<string, any>);
+}

@@ -4,7 +4,7 @@ import { extend } from 'umi-request';
 import { refreshTokenUrl } from '../../server.config';
 import * as utils from '@mono-app/utils';
 
-export default function umiRequest(env: string) {
+export default function umiRequest(env: PlatformType) {
   const platform = utils.platform.loadPlatform(env);
 
   const request = extend({ timeout: 30000 });

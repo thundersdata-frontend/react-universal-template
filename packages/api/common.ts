@@ -5,7 +5,7 @@
  * @returns
  */
 export const initRequest = () => {
-  const env = process.env.TARO_ENV ?? 'rn';
+  const env = process.env.TARO_ENV;
 
   // 使用 xhr 适配器的平台
   const platformsUsingXhrAdapter = ['rn', 'h5'];

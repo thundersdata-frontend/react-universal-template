@@ -1,7 +1,7 @@
 export default {
   name: 'h5',
 
-  getToken() {
+  getToken(): Token {
     return {
       accessToken: 'h5',
       refreshToken: 'h5',
@@ -12,4 +12,8 @@ export default {
   updateStorage(key: string, value: any) {
     console.log(key, value);
   },
-};
+
+  getStorage(key: string) {
+    return window.localStorage.getItem(key);
+  },
+} as Platform;

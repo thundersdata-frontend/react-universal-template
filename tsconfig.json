@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "jsx": "react-jsx",
-    "lib": ["esnext"],
+    "jsx": "preserve",
+    "lib": ["esnext", "dom"],
     "moduleResolution": "node",
     "target": "esnext",
     "noEmit": true,
@@ -23,7 +23,8 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "incremental": false,
-    "rootDir": "./"
   },
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+  ],
 }

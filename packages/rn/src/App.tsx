@@ -1,15 +1,19 @@
 import { useEffect } from 'react';
+import { Appearance } from 'react-native';
 import { hide as hideSplash } from 'react-native-bootsplash';
+import { useMemoizedFn, useSafeState } from '@td-design/rn-hooks';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { ThemeProvider } from '@td-design/react-native';
+
 import { Fallback } from './components/Fallback';
 import { lightTheme, darkTheme } from './theme';
-
 import Stack from './stack';
-import { Appearance } from 'react-native';
-import { useMemoizedFn, useSafeState } from '@td-design/rn-hooks';
+
+import * as utils from '@mono-app/utils';
+
+const platform = utils.platform.loadPlatform();
 
 const App = () => {
   useEffect(() => {
@@ -39,7 +43,11 @@ const App = () => {
     <SafeAreaProvider>
       <GestureHandlerRootView style={{ flex: 1 }}>
         <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
-          <NavigationContainer fallback={<Fallback />} theme={theme === 'dark' ? DarkTheme : DefaultTheme}>
+          <NavigationContainer
+            ref={platform.ref}
+            fallback={<Fallback />}
+            theme={theme === 'dark' ? DarkTheme : DefaultTheme}
+          >
             <Stack />
           </NavigationContainer>
         </ThemeProvider>

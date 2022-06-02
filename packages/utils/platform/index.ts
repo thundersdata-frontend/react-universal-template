@@ -1,21 +1,16 @@
-import rnPlatform from './rn';
-import h5Platform from './h5';
-import miniPlatform from './mini';
-
-export function loadPlatform(platform: string) {
+export function loadPlatform(platform?: PlatformType): Platform {
   switch (platform) {
     case 'rn':
-      return rnPlatform;
+    default:
+      return require('./rn').default;
     case 'h5':
-      return h5Platform;
+      return require('./h5').default;
     case 'weapp':
     case 'swan':
     case 'alipay':
     case 'tt':
     case 'qq':
     case 'jd':
-      return miniPlatform;
-    default:
-      throw new Error(`不支持的平台: ${platform}`);
+      return require('./mini').default;
   }
 }

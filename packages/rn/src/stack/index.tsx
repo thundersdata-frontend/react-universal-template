@@ -1,6 +1,7 @@
 import { StackNavigationOptions, CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack';
 import { TabStack } from './tabStack';
 
+import { OrderDetail } from '../modules/homepage/screens/orderDetail';
 import { ModifyPassword } from '../modules/user/screens/modifyPass';
 
 const MAIN_SCREENS = [
@@ -16,6 +17,13 @@ const MAIN_SCREENS = [
     component: ModifyPassword,
     options: {
       headerTitle: '修改密码',
+    },
+  },
+  {
+    name: 'OrderDetail',
+    component: OrderDetail,
+    options: {
+      headerTitle: '订单详情',
     },
   },
 ];
