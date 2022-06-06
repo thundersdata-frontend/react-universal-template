@@ -33,6 +33,7 @@
     "@mono-app/api": "*",
     "@mono-app/business": "*",
     "@mono-app/utils": "*",
+    "@mono-app/platform": "*",
     "@tarojs/components": "3.4.10",
     "@tarojs/plugin-framework-react": "3.4.10",
     "@tarojs/react": "3.4.10",

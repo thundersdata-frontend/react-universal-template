@@ -9,6 +9,7 @@
     "cross-env": "^7.0.3",
     "@mono-app/business": "*",
     "@mono-app/api": "*",
-    "@mono-app/utils": "*"
+    "@mono-app/utils": "*",
+    "@mono-app/platform": "*"
   }
 }

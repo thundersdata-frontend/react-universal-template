@@ -7,7 +7,8 @@
   "main": "index.ts",
   "dependencies": {
     "@mono-app/api": "*",
-    "@mono-app/platform": "*"
+    "@mono-app/platform": "*",
+    "@mono-app/utils": "*"
   },
   "devDependencies": {
     "@types/react": "17.0.39",
