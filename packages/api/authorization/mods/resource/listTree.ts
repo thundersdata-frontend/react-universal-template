@@ -2,7 +2,7 @@
  * @description 全部资源列表（树形）
  */
 
-import { initRequest } from '../../../common';
+import { initRequest } from '../../..';
 import serverConfig from '../../../server.config';
 
 const backEndUrl = serverConfig()['authorization'];
@@ -12,14 +12,17 @@ export const init = [];
 // 接口地址
 export const url = '/resource/listTree';
 
-export async function fetch(params = {}) {
-  const request = await initRequest();
-  const result = await request.get(backEndUrl + '/resource/listTree', {
-    headers: {
-      'Content-Type': 'application/json',
+export async function fetch<T>(params = {}) {
+  const request = initRequest();
+  const result = await request.get<AjaxResponse<T>>(
+    backEndUrl + '/resource/listTree',
+    {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      params,
     },
-    params,
-  });
+  );
   if (result) {
     if (!result.success) {
       throw new Error(JSON.stringify(result));

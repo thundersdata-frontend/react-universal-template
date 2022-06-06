@@ -2,7 +2,7 @@
  * @description 获取已经定义的规则列表
  */
 
-import { initRequest } from '../../../common';
+import { initRequest } from '../../..';
 import serverConfig from '../../../server.config';
 
 const backEndUrl = serverConfig()['authorization'];
@@ -12,14 +12,17 @@ export const init = [];
 // 接口地址
 export const url = '/data/rule/def/list';
 
-export async function fetch(params = {}) {
+export async function fetch<T>(params = {}) {
   const request = initRequest();
-  const result = await request.get(backEndUrl + '/data/rule/def/list', {
-    headers: {
-      'Content-Type': 'application/json',
+  const result = await request.get<AjaxResponse<T>>(
+    backEndUrl + '/data/rule/def/list',
+    {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      params,
     },
-    params,
-  });
+  );
   if (result) {
     if (!result.success) {
       throw new Error(JSON.stringify(result));

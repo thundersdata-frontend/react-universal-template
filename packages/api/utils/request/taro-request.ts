@@ -8,9 +8,9 @@ export default function taroRequest() {
   const { accessToken } = token;
 
   return {
-    get(url: string, options: RequestOption) {
+    async get<T = any, U = any>(url: string, options: RequestOption) {
       const { headers, params, data } = options;
-      return Taro.request({
+      const result = await Taro.request<T, U>({
         method: 'GET',
         url,
         data: {
@@ -22,10 +22,11 @@ export default function taroRequest() {
           accessToken,
         },
       });
+      return result.data;
     },
-    post(url: string, options: RequestOption) {
+    async post<T = any, U = any>(url: string, options: RequestOption) {
       const { headers, params, data } = options;
-      return Taro.request({
+      const result = await Taro.request<T, U>({
         method: 'POST',
         url,
         data: {
@@ -37,6 +38,7 @@ export default function taroRequest() {
           accessToken,
         },
       });
+      return result.data;
     },
   };
 }

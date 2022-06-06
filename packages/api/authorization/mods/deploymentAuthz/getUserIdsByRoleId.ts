@@ -2,7 +2,7 @@
  * @description 获取拥有此角色的所有用户id
  */
 
-import { initRequest } from '../../../common';
+import { initRequest } from '../../..';
 import serverConfig from '../../../server.config';
 
 const backEndUrl = serverConfig()['authorization'];
@@ -12,9 +12,9 @@ export const init = [];
 // 接口地址
 export const url = '/deployment/authz/getUserIdsByRoleId';
 
-export async function fetch(params = {}) {
-  const request = await initRequest();
-  const result = await request.get(
+export async function fetch<T>(params = {}) {
+  const request = initRequest();
+  const result = await request.get<AjaxResponse<T>>(
     backEndUrl + '/deployment/authz/getUserIdsByRoleId',
     {
       headers: {

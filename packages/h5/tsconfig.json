@@ -1,0 +1,20 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "build",
+    "sourceMap": true,
+    "jsx": "react",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2017",
+    "typeRoots": ["node_modules/@types", "../../global.d.ts", "./typings.d.ts"],
+    "lib": ["es2018", "dom"],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@@/*": ["./src/.umi/*"]
+    }
+  },
+  "include": ["./src", "../../global.d.ts", "./typings.d.ts"]
+}

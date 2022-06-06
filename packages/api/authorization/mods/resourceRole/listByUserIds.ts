@@ -2,7 +2,7 @@
  * @description 根据用户id列表查询其所有角色
  */
 
-import { initRequest } from '../../../common';
+import { initRequest } from '../../..';
 import serverConfig from '../../../server.config';
 
 const backEndUrl = serverConfig()['authorization'];
@@ -12,9 +12,9 @@ export const init = [];
 // 接口地址
 export const url = '/role/resource/listByUserIds';
 
-export async function fetch(data = {}) {
-  const request = await initRequest();
-  const result = await request.post(
+export async function fetch<T>(data = {}) {
+  const request = initRequest();
+  const result = await request.post<AjaxResponse<T>>(
     backEndUrl + '/role/resource/listByUserIds',
     {
       headers: {

@@ -2,7 +2,7 @@
  * @description 删除规则定义
  */
 
-import { initRequest } from '../../../common';
+import { initRequest } from '../../..';
 import serverConfig from '../../../server.config';
 
 const backEndUrl = serverConfig()['authorization'];
@@ -12,14 +12,17 @@ export const init = undefined;
 // 接口地址
 export const url = '/data/rule/def/delete';
 
-export async function fetch(params = {}) {
-  const request = await initRequest();
-  const result = await request.post(backEndUrl + '/data/rule/def/delete', {
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
+export async function fetch<T>(params = {}) {
+  const request = initRequest();
+  const result = await request.post<AjaxResponse<T>>(
+    backEndUrl + '/data/rule/def/delete',
+    {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      params,
     },
-    params,
-  });
+  );
   if (result) {
     if (!result.success) {
       throw new Error(JSON.stringify(result));

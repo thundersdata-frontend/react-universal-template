@@ -2,7 +2,7 @@
  * @description 校验角色是否已经存在
  */
 
-import { initRequest } from '../../../common';
+import { initRequest } from '../../..';
 import serverConfig from '../../../server.config';
 
 const backEndUrl = serverConfig()['authorization'];
@@ -12,9 +12,9 @@ export const init = [];
 // 接口地址
 export const url = '/role/resource/validateRoleName';
 
-export async function fetch(params = {}) {
-  const request = await initRequest();
-  const result = await request.get(
+export async function fetch<T>(params = {}) {
+  const request = initRequest();
+  const result = await request.get<AjaxResponse<T>>(
     backEndUrl + '/role/resource/validateRoleName',
     {
       headers: {

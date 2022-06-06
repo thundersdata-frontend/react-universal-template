@@ -187,7 +187,7 @@ export default class MyGenerator extends CodeGenerator {
       * @description ${inter.description}
       */
       ${defsStr}
-      import { initRequest } from '../../../common';
+      import { initRequest } from '../../..';
       import serverConfig from '../../../server.config';
 
       const backEndUrl = serverConfig()['${this.dataSource.name}'];
@@ -197,9 +197,9 @@ export default class MyGenerator extends CodeGenerator {
       // 接口地址
       export const url = "${inter.path}";
 
-      export async function fetch(${requestParams}) {
+      export async function fetch<T>(${requestParams}) {
         const request = initRequest();
-        const result = await request.${requestObj.method}(backEndUrl + '${inter.path}', {
+        const result = await request.${requestObj.method}<AjaxResponse<T>>(backEndUrl + '${inter.path}', {
           headers: {
             'Content-Type': '${requestObj.contentType}',
           },

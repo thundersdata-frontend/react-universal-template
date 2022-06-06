@@ -5,6 +5,8 @@
   "author": "chenjie@thundersdata.com",
   "private": true,
   "main": "index.ts",
+  "browser": "index.ts",
+  "react-native": "index.ts",
   "dependencies": {
     "@mono-app/api": "*",
     "@mono-app/platform": "*",

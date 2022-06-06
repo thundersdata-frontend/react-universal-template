@@ -2,7 +2,7 @@
  * @description 获取ResourceRole列表（含分页）
  */
 import * as defs from '../../baseClass';
-import { initRequest } from '../../../common';
+import { initRequest } from '../../..';
 import serverConfig from '../../../server.config';
 
 const backEndUrl = serverConfig()['authorization'];
@@ -12,9 +12,9 @@ export const init = new defs.authorization.PagingEntity();
 // 接口地址
 export const url = '/role/resource/listByBusinessValues';
 
-export async function fetch(params = {}) {
-  const request = await initRequest();
-  const result = await request.post(
+export async function fetch<T>(params = {}) {
+  const request = initRequest();
+  const result = await request.post<AjaxResponse<T>>(
     backEndUrl + '/role/resource/listByBusinessValues',
     {
       headers: {

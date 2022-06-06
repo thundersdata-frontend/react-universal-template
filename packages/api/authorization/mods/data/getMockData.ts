@@ -2,7 +2,7 @@
  * @description 获取mock数据
  */
 
-import { initRequest } from '../../../common';
+import { initRequest } from '../../..';
 import serverConfig from '../../../server.config';
 
 const backEndUrl = serverConfig()['authorization'];
@@ -12,9 +12,9 @@ export const init = [];
 // 接口地址
 export const url = '/data/mock';
 
-export async function fetch(params = {}) {
-  const request = await initRequest();
-  const result = await request.get(backEndUrl + '/data/mock', {
+export async function fetch<T>(params = {}) {
+  const request = initRequest();
+  const result = await request.get<AjaxResponse<T>>(backEndUrl + '/data/mock', {
     headers: {
       'Content-Type': 'application/json',
     },

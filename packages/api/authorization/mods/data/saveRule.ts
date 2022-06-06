@@ -2,7 +2,7 @@
  * @description 保存数据规则
  */
 
-import { initRequest } from '../../../common';
+import { initRequest } from '../../..';
 import serverConfig from '../../../server.config';
 
 const backEndUrl = serverConfig()['authorization'];
@@ -12,14 +12,17 @@ export const init = undefined;
 // 接口地址
 export const url = '/data/rule/save';
 
-export async function fetch(data = {}) {
-  const request = await initRequest();
-  const result = await request.post(backEndUrl + '/data/rule/save', {
-    headers: {
-      'Content-Type': 'application/json',
+export async function fetch<T>(data = {}) {
+  const request = initRequest();
+  const result = await request.post<AjaxResponse<T>>(
+    backEndUrl + '/data/rule/save',
+    {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      data,
     },
-    data,
-  });
+  );
   if (result) {
     if (!result.success) {
       throw new Error(JSON.stringify(result));

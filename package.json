@@ -36,7 +36,13 @@
       "**/react-native-**",
       "**/@react-native-**",
       "**/@tarojs",
-      "**/@tarojs/**"
+      "**/@tarojs/**",
+      "**/alita",
+      "**/alita/**",
+      "**/@alita/**",
+      "**/umi",
+      "**/umi/**",
+      "**/@umijs/**"
     ]
   },
   "devDependencies": {

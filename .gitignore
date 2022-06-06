@@ -151,3 +151,6 @@ Podfile.lock
 
 # react-native-config codegen
 tmp.xcconfig
+
+# umi
+.umi
