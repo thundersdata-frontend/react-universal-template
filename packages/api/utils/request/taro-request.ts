@@ -1,10 +1,9 @@
 import Taro from '@tarojs/taro';
-import * as utils from '@mono-app/utils';
+import platform from '@mono-app/platform';
 
 type RequestOption = { params?: Record<string, any>; headers: Record<string, any>; data?: any };
 
-export default function taroRequest(env: PlatformType) {
-  const platform = utils.platform.loadPlatform(env);
+export default function taroRequest() {
   const token = platform.getToken();
   const { accessToken } = token;
 

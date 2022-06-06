@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { API } from '@mono-app/api';
-import { platform } from './utils';
+import platform from '@mono-app/platform';
 
 type Order = { id: number; name: string; email: string };
 
@@ -20,7 +20,7 @@ export default function useOrderService() {
   const navigateOrder = () => {
     const order = platform.getStorage('order');
     if (order) {
-      platform.navigate('OrderDetail', { order: JSON.parse(order) });
+      platform.navigate('orderDetail', order);
     }
   };
 

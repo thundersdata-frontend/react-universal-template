@@ -1,8 +1,8 @@
 import { StackNavigationOptions, CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack';
-import { TabStack } from './tabStack';
+import TabStack from './tabStack';
 
-import { OrderDetail } from '../modules/homepage/screens/orderDetail';
-import { ModifyPassword } from '../modules/user/screens/modifyPass';
+import OrderDetail from '../modules/homepage/screens/orderDetail';
+import ModifyPassword from '../modules/user/screens/modifyPass';
 
 const MAIN_SCREENS = [
   {
@@ -13,14 +13,14 @@ const MAIN_SCREENS = [
     },
   },
   {
-    name: 'ModifyPassword',
+    name: 'modifyPassword',
     component: ModifyPassword,
     options: {
       headerTitle: '修改密码',
     },
   },
   {
-    name: 'OrderDetail',
+    name: 'orderDetail',
     component: OrderDetail,
     options: {
       headerTitle: '订单详情',
@@ -39,7 +39,7 @@ export default () => {
 
   return (
     <Stack.Navigator initialRouteName="Tab" screenOptions={commonStackOptions}>
-      <Stack.Group screenOptions={{ headerShown: false }}>
+      <Stack.Group>
         {MAIN_SCREENS.map(screen => (
           <Stack.Screen key={screen.name} {...screen} />
         ))}

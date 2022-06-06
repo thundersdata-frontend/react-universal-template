@@ -12,10 +12,23 @@ export default {
   },
 
   updateStorage(key: string, value: any) {
-    console.log(key, value);
+    Taro.setStorageSync(key, value);
   },
 
   getStorage(key: string) {
     return Taro.getStorageSync(key);
+  },
+
+  navigate(path: string, params?: Record<string, any>) {
+    const url = `/pages/${path}/index${
+      params
+        ? `?${Object.keys(params)
+            .map(key => `${key}=${params[key]}`)
+            .join('&')}`
+        : ''
+    }`;
+    Taro.navigateTo({
+      url,
+    });
   },
 } as Platform;

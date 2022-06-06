@@ -6,7 +6,8 @@
   "private": true,
   "main": "index.ts",
   "dependencies": {
-    "@mono-app/api": "*"
+    "@mono-app/api": "*",
+    "@mono-app/platform": "*"
   },
   "devDependencies": {
     "@types/react": "17.0.39",

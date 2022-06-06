@@ -11,9 +11,7 @@ import { Fallback } from './components/Fallback';
 import { lightTheme, darkTheme } from './theme';
 import Stack from './stack';
 
-import * as utils from '@mono-app/utils';
-
-const platform = utils.platform.loadPlatform();
+import platform from '@mono-app/platform';
 
 const App = () => {
   useEffect(() => {

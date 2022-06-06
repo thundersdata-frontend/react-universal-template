@@ -7,7 +7,7 @@ import { CustomRefreshControl } from '../../../components/CustomRefreshControl';
 const { px } = helpers;
 const AVATAR_SIZE = px(66);
 
-export const Mine = () => {
+export default function Mine() {
   return (
     <Container>
       <ScrollView refreshControl={<CustomRefreshControl />}>
@@ -19,4 +19,4 @@ export const Mine = () => {
       </ScrollView>
     </Container>
   );
-};
+}

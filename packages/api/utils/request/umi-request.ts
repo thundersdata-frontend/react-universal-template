@@ -2,11 +2,9 @@ import { isEmpty } from 'lodash-es';
 import dayjs from 'dayjs';
 import { extend } from 'umi-request';
 import { refreshTokenUrl } from '../../server.config';
-import * as utils from '@mono-app/utils';
+import platform from '@mono-app/platform';
 
-export default function umiRequest(env: PlatformType) {
-  const platform = utils.platform.loadPlatform(env);
-
+export default function umiRequest() {
   const request = extend({ timeout: 30000 });
   request.use(async (ctx, next) => {
     const token = platform.getToken();

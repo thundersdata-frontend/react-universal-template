@@ -5,8 +5,8 @@ import { helpers, Text } from '@td-design/react-native';
 import { AppTheme } from '../../theme';
 import Icon, { IconNames } from '../../components/Icon';
 
-import { Homepage } from '../../modules/homepage/screens';
-import { Mine } from '../../modules/user/screens';
+import Homepage from '../../modules/homepage/screens';
+import Mine from '../../modules/user/screens';
 
 const { px } = helpers;
 const Tab = createBottomTabNavigator();
@@ -25,7 +25,7 @@ const tabItems: { name: string; label: string; icon: IconNames; component: () =>
   },
 ];
 
-export const TabStack = () => {
+export default function TabStack() {
   const theme = useTheme<AppTheme>();
   return (
     <Tab.Navigator
@@ -65,4 +65,4 @@ export const TabStack = () => {
       ))}
     </Tab.Navigator>
   );
-};
+}

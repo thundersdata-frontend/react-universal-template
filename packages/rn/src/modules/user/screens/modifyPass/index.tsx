@@ -1,9 +1,9 @@
 import { Text, View } from 'react-native';
 
-export const ModifyPassword = () => {
+export default function ModifyPassword() {
   return (
     <View>
       <Text>Modify Password</Text>
     </View>
   );
-};
+}

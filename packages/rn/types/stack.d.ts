@@ -12,16 +12,13 @@ type AuthStackParamList = {
 };
 
 type MainStackParamList = {
-  Tab: undefined;
-  Homepage: undefined;
-  OrderDetail: {
-    order: {
-      id: number;
-      name: string;
-      email: string;
-    };
+  homepage: undefined;
+  orderDetail: {
+    id: number;
+    name: string;
+    email: string;
   };
-  ModifyPassword: undefined;
+  modifyPassword: undefined;
 };
 
 type AppParamList = AuthStackParamList & MainStackParamList & CommonStackParamList;

@@ -3,9 +3,9 @@ import { Container } from '../../../components/Container';
 
 import useOrderService from '@mono-app/business/useOrderService';
 import { useEffect } from 'react';
-import { platform } from '@mono-app/utils';
+import platform from '@mono-app/platform';
 
-export const Homepage = () => {
+export default function Homepage() {
   const { fetchOrder, order, navigateOrder } = useOrderService();
 
   useEffect(() => {
@@ -13,7 +13,7 @@ export const Homepage = () => {
   }, []);
 
   const handlePress = () => {
-    const order = platform.loadPlatform().getStorage('order');
+    const order = platform.getStorage('order');
     console.log(order);
   };
 
@@ -31,4 +31,4 @@ export const Homepage = () => {
       </Box>
     </Container>
   );
-};
+}

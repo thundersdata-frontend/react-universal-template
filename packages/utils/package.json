@@ -5,14 +5,7 @@
   "author": "chenjie@thundersdata.com",
   "private": true,
   "main": "index.ts",
-  "scripts": {
-    "install-peers": "install-peers"
-  },
   "devDependencies": {
-    "@react-navigation/native": "^6.0.10",
-    "@tarojs/taro": "^3.4.10",
-    "immer": "^9.0.14",
-    "install-peers-cli": "^2.2.0",
-    "react-native-mmkv": "^2.4.1"
+    "immer": "^9.0.14"
   }
 }

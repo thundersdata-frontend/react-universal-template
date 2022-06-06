@@ -1,0 +1,18 @@
+{
+  "name": "@mono-app/platform",
+  "version": "1.0.0",
+  "description": "多端通用的辅助方法",
+  "author": "chenjie@thundersdata.com",
+  "private": true,
+  "react-native": "./rn/index.ts",
+  "main": "./mini/index.ts",
+  "browser": "./h5/index.ts",
+  "dependencies": {
+    "@mono-app/utils": "*"
+  },
+  "devDependencies": {
+    "@react-navigation/native": "^6.0.10",
+    "@tarojs/taro": "^3.4.10",
+    "react-native-mmkv": "^2.4.1"
+  }
+}
