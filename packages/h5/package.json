@@ -9,13 +9,14 @@
     "start": "alita dev"
   },
   "dependencies": {
-    "@alita/flow": "*",
+    "@alita/flow": "3.0.0-rc.1",
     "@mono-app/api": "*",
     "@mono-app/business": "*",
-    "@mono-app/utils": "*",
     "@mono-app/platform": "*",
-    "alita": "^3.0.0-rc.5",
-    "antd-mobile": "^5.10.1"
+    "@mono-app/utils": "*",
+    "alita": "^3.0.0-rc.9",
+    "antd-mobile": "^5.10.1",
+    "url-search-params-polyfill": "^8.1.1"
   },
   "devDependencies": {
     "@types/jest": "^27.4.0",

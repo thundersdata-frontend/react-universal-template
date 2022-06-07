@@ -1,3 +1,4 @@
+// @ts-ignore
 import Taro from '@tarojs/taro';
 
 export default {

@@ -1,3 +1,5 @@
+import 'url-search-params-polyfill';
+
 import HomeGary from '@/assets/demoIcon/home.png';
 import HomeBlue from '@/assets/demoIcon/home1.png';
 import SetGary from '@/assets/demoIcon/setting.png';

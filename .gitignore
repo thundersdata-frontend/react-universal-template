@@ -153,4 +153,4 @@ Podfile.lock
 tmp.xcconfig
 
 # umi
-.umi
+.umi/

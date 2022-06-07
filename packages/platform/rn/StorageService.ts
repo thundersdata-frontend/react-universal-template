@@ -1,3 +1,4 @@
+// @ts-ignore
 import { MMKV } from 'react-native-mmkv';
 import * as utils from '@mono-app/utils';
 import { StorageToken } from '../constant';
@@ -20,33 +21,21 @@ class StorageService {
   }
 
   get confirmed(): boolean {
-    if (
-      StorageService.getInstance()
-        .storage.getAllKeys()
-        .includes(StorageToken.Confirmed)
-    ) {
+    if (StorageService.getInstance().storage.getAllKeys().includes(StorageToken.Confirmed)) {
       return StorageService.getInstance().storage.getBoolean(StorageToken.Confirmed) ?? false;
     }
     return false;
   }
 
   get signedIn(): boolean {
-    if (
-      StorageService.getInstance()
-        .storage.getAllKeys()
-        .includes(StorageToken.SignedIn)
-    ) {
+    if (StorageService.getInstance().storage.getAllKeys().includes(StorageToken.SignedIn)) {
       return StorageService.getInstance().storage.getBoolean(StorageToken.SignedIn) ?? false;
     }
     return false;
   }
 
   get token(): Token {
-    if (
-      StorageService.getInstance()
-        .storage.getAllKeys()
-        .includes(StorageToken.Token)
-    ) {
+    if (StorageService.getInstance().storage.getAllKeys().includes(StorageToken.Token)) {
       const tokenStr = StorageService.getInstance().storage.getString(StorageToken.Token);
       try {
         return tokenStr ? JSON.parse(tokenStr) : {};
@@ -59,11 +48,7 @@ class StorageService {
   }
 
   get userInfo(): UserInfo {
-    if (
-      StorageService.getInstance()
-        .storage.getAllKeys()
-        .includes(StorageToken.UserInfo)
-    ) {
+    if (StorageService.getInstance().storage.getAllKeys().includes(StorageToken.UserInfo)) {
       const userInfoStr = StorageService.getInstance().storage.getString(StorageToken.UserInfo);
       try {
         return userInfoStr ? JSON.parse(userInfoStr) : {};
@@ -99,7 +84,7 @@ class StorageService {
         case 'string':
         case 'number':
         case 'boolean':
-          StorageService.getInstance().storage.set(key, (value as unknown) as string | number | boolean);
+          StorageService.getInstance().storage.set(key, value as unknown as string | number | boolean);
           break;
       }
     } catch (error) {

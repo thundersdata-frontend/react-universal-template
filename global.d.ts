@@ -46,6 +46,6 @@ interface Platform {
   ref?: any;
   getToken(): Token;
   updateStorage<T>(key: string, value: T): void;
-  getStorage(key: string): Record<string, any> | undefined;
+  getStorage(key: string): Record<string, any> | string | undefined;
   navigate(path: string, params?: Record<string, any>);
 }

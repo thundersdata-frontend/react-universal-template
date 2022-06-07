@@ -9,10 +9,5 @@
   "browser": "./h5/index.ts",
   "dependencies": {
     "@mono-app/utils": "*"
-  },
-  "devDependencies": {
-    "@react-navigation/native": "^6.0.10",
-    "@tarojs/taro": "^3.4.10",
-    "react-native-mmkv": "^2.4.1"
   }
 }

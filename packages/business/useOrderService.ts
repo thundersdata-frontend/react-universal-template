@@ -18,7 +18,7 @@ export default function useOrderService() {
   };
 
   const navigateOrder = () => {
-    const order = platform.getStorage('order');
+    const order = platform.getStorage('order') as any;
     if (order) {
       platform.navigate('orderDetail', order);
     }
