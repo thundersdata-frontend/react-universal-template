@@ -1,11 +1,11 @@
 import React from 'react';
-import { useLocation } from 'alita';
-import { parse } from 'qs';
+import { useSearchParams } from 'alita';
+import qs from 'qs';
 
 export default function OrderDetail() {
-  const location = useLocation();
-  const query = parse(location.search, { ignoreQueryPrefix: true });
-  const { id, name, email } = query;
+  const [searchParams] = useSearchParams();
+  const query = searchParams.toString();
+  const { id, name, email } = qs.parse(query);
 
   return (
     <div>

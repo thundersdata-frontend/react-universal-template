@@ -1,5 +1,5 @@
 // @ts-ignore
-import { history } from 'alita';
+import { history, createSearchParams } from 'alita';
 
 export default {
   name: 'h5',
@@ -26,7 +26,7 @@ export default {
   },
 
   navigate(path: string, params?: Record<string, any>) {
-    const searchParams = new URLSearchParams(params);
+    const searchParams = createSearchParams(params);
     const url = `/${path}?${searchParams.toString()}`;
     history.push(url);
   },

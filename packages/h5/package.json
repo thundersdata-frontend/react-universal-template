@@ -15,8 +15,7 @@
     "@mono-app/platform": "*",
     "@mono-app/utils": "*",
     "alita": "^3.0.0-rc.9",
-    "antd-mobile": "^5.10.1",
-    "url-search-params-polyfill": "^8.1.1"
+    "antd-mobile": "^5.10.1"
   },
   "devDependencies": {
     "@types/jest": "^27.4.0",
